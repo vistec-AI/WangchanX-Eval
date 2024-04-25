@@ -1,0 +1,7 @@
+openai==0.28
+pandas
+pythainlp>=5.0
+tqdm
+transformers
+torch
+sentencepiece
