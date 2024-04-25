@@ -84,7 +84,7 @@ model	28.59
 
 ## Citations
 
-If you use WangchanX Eval in your project or publication, please cite the library as follows
+If you use WangchanX or WangchanX Eval in your project or publication, please cite the library as follows
 
 ```tex
 @misc{phatthiyaphaibun2024wangchanlion,
