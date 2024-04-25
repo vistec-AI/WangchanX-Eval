@@ -1,10 +1,14 @@
 # WangChanX Eval
 
-WangChanX Eval is a Machine Reading Comprehension (MRC) evaluation. Our evaluation use in [our technical report](https://arxiv.org/abs/2403.16127).
-
-Our evaluation use GPT-4 as judge. You needs to have [GPT-4 API](https://platform.openai.com/docs/guides/text-generation).
+WangChanX Eval is a Machine Reading Comprehension (MRC) evaluation pipeline.
+We employ models from [the WangchanX project](https://github.com/vistec-AI/WangchanX) to evaluate their effectiveness on question-answering datasets.
+In particular, instead of evaluating only the F1 score on MRC datasets, we use an LLM (i.e., GPT4 or Gemini) as a judge on four criteria: (i) Correctness, (ii) Helpfulness, (iii) Irrelevancy, and (iv) Out-of-Context.
+The full details of our evaluation can be found in [our technical report](https://arxiv.org/abs/2403.16127).
+With this new evaluation process, we can observe more insight and behavior of the provided model compared to the F1 score. 
+Note that our evaluation uses GPT-4 as a judge. Therefore, you need to have [GPT-4 API](https://platform.openai.com/docs/guides/text-generation).
 
 Version: 0.1
+
 
 ## Guide
 
@@ -14,7 +18,7 @@ Version: 0.1
 
 **Dataset**
 
-We split 100 rows from Thai subset in XQuAD dataset for our evaluation. You can create, add, or change the dataset in `gen_text/eval.csv` that has columns:
+We split 100 rows from the Thai subset in the XQuAD dataset for our evaluation. You can create, add, or change the dataset in `gen_text/eval.csv` that has columns:
 
 - references: Reference Answer
 - context: Context
@@ -22,21 +26,21 @@ We split 100 rows from Thai subset in XQuAD dataset for our evaluation. You can 
 
 **Generate text**
 
-You can get the reult from our XQuAD set to use for our evaluation by
+You can get the results from our XQuAD set to use for our evaluation by
 
 > python gen_text/main.py -m {HuggingFace model path}
 
-It give you file name as `model_name.csv`.
+It gives you file name as `model_name.csv`.
 
 
 **Config**
 
-You can setting OpenAI API key by go to `mrc_eval`, edit `config-sample.json` and save as `config.json`
+You can set the OpenAI API key by going to `mrc_eval`, editing `config-sample.json`, and save as `config.json`
 
 
 **Run**
 
-Our MRC evaluation can use by
+Our MRC evaluation can be used by
 
 > python mrc_eval/main.py -f model_name.csv
 
@@ -45,9 +49,9 @@ Example
 > python gen_text/main.py -m SeaLLMs/SeaLLM-7B-v2.5
 > python mrc_eval/main.py -f SeaLLM-7B-v2.5.csv
 
+The output will be in the file: mrc_eval/result/result-eval-gpt-4-SeaLLM-7B-v2.5.txt
 
-mrc_eval/result/result-eval-gpt-4-SeaLLM-7B-v2.5.txt
-
+For example:
 ```
 XQuAD score
 --------------------
