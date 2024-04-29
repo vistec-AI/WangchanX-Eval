@@ -47,6 +47,7 @@ Our MRC evaluation can be used by
 Example
 
 > python gen_text/main.py -m SeaLLMs/SeaLLM-7B-v2.5
+
 > python mrc_eval/main.py -f SeaLLM-7B-v2.5.csv
 
 The output will be in the file: mrc_eval/result/result-eval-gpt-4-SeaLLM-7B-v2.5.txt
