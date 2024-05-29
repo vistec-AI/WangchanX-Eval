@@ -1,3 +1,5 @@
+<img src="https://github.com/vistec-AI/vistec-ai.github.io/blob/main/wangchanx_logo_color.png?raw=true" width="250">
+
 # WangChanX Eval
 
 WangChanX Eval is a Machine Reading Comprehension (MRC) evaluation pipeline.
